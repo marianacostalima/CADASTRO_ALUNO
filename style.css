@@ -1,0 +1,133 @@
+/*font*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{   /* * e pra tudo*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+/*font*/
+
+/*rgb cor, cria um padrao*/
+:root {
+    --bg-color: white;
+    --primary-color: rgb(51, 44, 120);
+}
+/*rgb cor*/
+
+/*cabeçalho*/
+header {
+    margin-top: 2rem;
+}
+header img {       /*imagem*/
+    width: 20rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    background-color: var(--bg-color);
+}
+
+.container {
+    flex-grow: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    padding: 20px;
+    gap: 40px;
+}
+
+
+/*titulo*/
+.title {  
+    font-size: 40px;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/*quadrado q recebe a resposta do usuario*/
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 40px;
+}
+
+/*INICIO quadrado que recebe as informacoes do usuario*/
+.inputbox{
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    height: 40px;
+}
+
+/*titulo do que se deve colocar, nome, email, cep*/
+.inputbox label {
+    position: relative;
+    top: 0;
+    left: 10px;
+    font-size: 20px;
+    color: var(--primary-color);
+    transform: .5s;
+    cursor: text;
+}
+
+/*transforma a caixinha que recebe a informacao*/
+.inputbox input {
+    position: absolute;
+    background-color: var(--primary-color);
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    box-shadow: none;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    transition: .5s;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 0 10px;
+    color: white  /*cor da escrita = branca*/
+}
+
+/* INICIO, animacao que quando vc clica encima do quadrado pra responder ele fica colorido*/
+
+.inputbox input:focus, 
+.inputbox input:valid{
+    height: 100%;
+}
+
+.inputbox input:focus + label, 
+.inputbox input:valid + label{
+    top: -40%;
+    left: 0;
+}
+
+/* FIM, animacao que quando vc clica encima do quadrado pra responder ele fica colorido*/
+/*INICIO quadrado que recebe as informacoes do usuario*/
+
+
+/*INICIO botao*/
+.container button {
+    justify-self: center;
+    width: 200px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 2px;
+    color: white;
+}
+/*FIM botao*/
+
+footer {
+    color: var(--primary-color);
+}
